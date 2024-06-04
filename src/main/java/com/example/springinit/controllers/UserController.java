@@ -13,22 +13,21 @@ import com.example.springinit.models.User;
 
 @Controller
 public class UserController {
-
 @GetMapping("/details")
 public String details(Model model)
 {
-    User user = new User("Dayana", "Carvajal","");
+    User user = new User("Dayana", "Carvajal");
     
     model.addAttribute("title","Spring Init");
     model.addAttribute("user", user);
     return "details";
 }
-@GetMapping("/user/list")
+@GetMapping("/list")
 
 public String list(ModelMap model)
 {
     model.addAttribute("title","Listado de usuario");
-    return "List";
+    return "list";
 }
 @ModelAttribute("users")
 public List<User> userModel()

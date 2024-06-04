@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://wwww.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +7,21 @@
 </head>
 <body>
     <h1 th:text="${title}"></h1>
-    <div th:if="${users.isEmpty()}" th:text="${'No existen usuarios'}"></div>
-    <table th:if=""${not users.isEmpty()}>
+    <div th:if="${users.isEmpty()}" th:text="'No existen usuarios'"></div>
+    <table th:if="${not users.isEmpty()}">
         <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
+                <th>Name</th>
+                <th>Lastname</th>
                 <th>Email</th>
             </tr>
         </thead>
         <tbody>
-            <tr th:each="user:${users}">
-                <td th:text="${User.name}"></td>
-                <td th:text="${User.lastname}"></td>
-                <td th:text="${User.email}"></td>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.lastname}"></td>
+                <td th:if="${user.email}" th:text="${user.email}"></td>
+                <td th:if="${user.email == null}" th:text="'sin email'"></td>
             </tr>
         </tbody>
     </table>

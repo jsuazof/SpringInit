@@ -9,6 +9,6 @@ public class HomeController {
     @GetMapping({"/", "/home"})
     public String home() 
     {
-        return "redirect:/user/list";
+        return "redirect:/list";
     }
 }
