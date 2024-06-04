@@ -14,6 +14,11 @@ public class User {
     public User(String email) {
         this.email = email;
     }
+   
+    public User(String name, String lastname) {
+        this.name = name;
+        this.lastname = lastname;
+    }
     public String getName() {
         return name;
     }

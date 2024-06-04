@@ -5,10 +5,12 @@
     <title th:text="${title}">Title</title>
 </head>
 <body>
-<h1>Titulo</h1>
+<h1 th:text="${title}">Titulo</h1>
 <ul>
-    <li>nombre</li>
-    <li>e-mail</li>
+    <li th:text="${user.name}">nombre</li>
+    <li th:text="${user.lastname}">apellido</li>
+    <li th:if="${user.email}" th:text="${user.email}"></li>
+    <li th:if="${user.email==null}" th:text="${'Sin correo'}"></li>
 
 </ul>
 
